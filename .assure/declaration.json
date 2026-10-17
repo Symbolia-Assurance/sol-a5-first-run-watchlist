@@ -1,0 +1,69 @@
+{
+  "app_objects": [
+    {
+      "factory": "create_app",
+      "module": "watchlist",
+      "name": "app"
+    },
+    {
+      "module": "watchlist.blueprints.auth",
+      "name": "auth_bp"
+    },
+    {
+      "module": "watchlist.blueprints.main",
+      "name": "main_bp"
+    }
+  ],
+  "app_roots": [
+    "watchlist"
+  ],
+  "elevation_writers": [],
+  "execution_authorized": false,
+  "guards": [
+    {
+      "decorator": "login_required",
+      "definition": "flask_login.login_required",
+      "key": "_user_id",
+      "requires": "session_key_present"
+    }
+  ],
+  "hardware_authorized": false,
+  "id": "flask-8836f180e11e",
+  "identity_writers": [
+    "watchlist.blueprints.auth.login"
+  ],
+  "idiom": "flask-session-decorator",
+  "industrial_release_authorized": false,
+  "language": "python",
+  "libraries": [
+    "click",
+    "dotenv",
+    "flask_login",
+    "flask_sqlalchemy",
+    "sqlalchemy"
+  ],
+  "physical_validation": false,
+  "public_routes": [
+    {
+      "method": "GET",
+      "path": "/login"
+    },
+    {
+      "method": "POST",
+      "path": "/login"
+    },
+    {
+      "method": "GET",
+      "path": "/"
+    }
+  ],
+  "registrations_complete": true,
+  "release_allowed": false,
+  "schema": "assure.python-auth.declaration/v1",
+  "self_approved": false,
+  "session_identity_key": "_user_id",
+  "signout_views": [
+    "watchlist.blueprints.auth.logout"
+  ],
+  "simulation": true
+}
