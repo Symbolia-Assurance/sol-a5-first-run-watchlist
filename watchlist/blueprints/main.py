@@ -80,3 +80,11 @@ def settings():
         return redirect(url_for('main.index'))
 
     return render_template('settings.html')
+
+
+@main_bp.route('/movie/delete-fast/<int:movie_id>', methods=['POST'])
+def delete_movie_fast(movie_id):
+    movie = db.get_or_404(Movie, movie_id)
+    db.session.delete(movie)
+    db.session.commit()
+    return '', 204
